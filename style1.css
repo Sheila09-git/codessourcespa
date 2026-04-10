@@ -1,0 +1,124 @@
+@font-face {
+  font-family: "playfairdisplay";
+  src: url(Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf);
+}
+body {
+  background: url(image/image_13.webp);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "playfairdisplay";
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1 rem;
+  margin: 0;
+  padding: 0;
+}
+nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  color: white;
+}
+nav {
+  width: 100%;
+  height: 60px;
+  background-color: #8b0000;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.logo {
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 70px;
+}
+.lacarte {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  border-bottom: 3px solid transparent;
+}
+.dropdown:hover .lacarte {
+  display: block;
+}
+.entre {
+  border-bottom: 3px;
+  color: red;
+}
+.plats {
+  border-bottom: 3px;
+  color: red;
+}
+.dessert {
+  border-bottom: 3px solid red;
+  color: red;
+}
+.icone {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.register-card {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  width: 420px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0);
+}
+.register-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: bold;
+  color: black;
+}
+.form-control {
+  border-radius: 10px;
+  padding: 14px;
+  width: 100%;
+}
+.btn-register {
+  padding: 12px;
+  border-radius: 30px;
+  background: palevioletred;
+  color: black;
+  font-weight: bold;
+  border: none;
+  transition: 0.3s;
+  align-items: center;
+  justify-content: center;
+}
+.btn-register:hover {
+  background: linear-gradient(135deg, #8b0000, #5c0000);
+}
+.footer-text {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+a {
+  text-decoration: none;
+}
+.footer-text a {
+  color: palevioletred;
+  font-weight: bold;
+  text-decoration: none;
+}
+.footer-text a:hover {
+  background: linear-gradient(135deg, #8b0000, #5c0000);
+}

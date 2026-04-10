@@ -1,0 +1,47 @@
+body {
+  background: #f5f6f8;
+}
+
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: #e9edf2;
+}
+
+.nav-link {
+  color: #333;
+  border-radius: 10px;
+  padding: 8px 12px;
+  margin-bottom: 5px;
+}
+
+.nav-link:hover {
+  background: #dbe4ff;
+}
+
+.nav-link.active {
+  background: #5c7cfa;
+  color: white;
+}
+
+.icon {
+  margin-right: 8px;
+  background: #d0e2ff;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.submenu {
+  list-style: none;
+  padding-left: 35px;
+  font-size: 14px;
+}
+
+.submenu li a {
+  text-decoration: none;
+  color: #555;
+}
+
+.submenu li a:hover {
+  color: #5c7cfa;
+}

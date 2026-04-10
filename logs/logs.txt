@@ -1,0 +1,19 @@
+
+
+if (isset($_POST['envoyer'])) {
+
+    $sujet = $_POST['sujet'];
+    $message = $_POST['message'];
+
+    $sql = "SELECT username, email FROM users";
+    $result = $pdo->query($sql);
+
+    while ($row = $result->fetch()) {
+
+        $nom = $row['username'];
+        $email = $row['email'];
+
+        $msg = "Bonjour $nom,\n\n$message\n\nWhine Dinning";
+        echo "Envoyé à : $email <br>";
+    }
+}

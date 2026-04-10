@@ -1,0 +1,57 @@
+
+.tile {
+    width: 100px;
+    height: 100px;
+    border: 1px solid white;
+
+    background-size: 300px 300px;
+    cursor: pointer;
+}
+
+#puzzle-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+}
+
+
+
+.selected {
+    outline: 3px solid blue;
+}
+
+.veri {
+    background-color: #F57B7B;
+    border-color: #F57B7B;
+    color: rgb(0, 0, 0);
+    
+}
+
+.veri:hover {
+    background-color: #F57B7B;
+    border-color: #F57B7B;
+    cursor: pointer;
+}
+
+
+.Boite{
+    width: 500px;
+    height: 450px;
+    background: white;
+    border-radius: 28px;
+    outline: 1px #ECE7E2;
+    box-shadow: 0px 20px 60px 0px rgba(0, 0, 0, 0.08);
+    
+    
+    
+}
+
+
+ body {
+    background-image: url("Image/SIgn.jpg");
+    background-size: 100% 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+}

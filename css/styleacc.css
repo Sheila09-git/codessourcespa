@@ -1,0 +1,262 @@
+@font-face {
+    font-family: playfairdisplay;
+    src: url(Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf);
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1 rem;
+    margin: 0;
+    padding: 0;
+}
+nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    color: white;
+}
+nav{
+    width: 100%;
+    height: 60px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    position: fixed;
+}
+.tableau{
+    font-family: playfairdisplay;
+    color: #D6C3A1;
+}
+.dropdown:hover{
+    display: block;
+}
+.logo{
+    height: 50px;
+   border-radius: 50%;
+    margin-right: 70px;
+}
+.lacarte{
+    display: none;
+    list-style-type: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+    border-bottom: 3px solid transparent;
+}
+.menu-checkbox:checked{
+    display: none;
+}
+.menu-plat{
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+}.menu-checkbox:checked ~ .lacarte {
+    display: block;
+}
+.menu-checkbox{
+    display: none;
+}
+
+.icone-checkbox:checked{
+    display: none;
+}
+.incone{
+    cursor: pointer;
+    display: inline-block;
+    user-select: none;
+}
+.icone-checkbox:checked ~ .lecompte {
+    display: block;
+}
+.icone-checkbox{
+    display: none;
+}
+.lecompte{
+    display: none;
+    list-style: none;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 20px;
+    border-bottom: 3px solid transparent;
+}
+
+
+.plat :hover{
+   border-top: 5px solid red;
+    background-color: RGBa(64, 200, 130, 0.15);
+    font-family: playfairdisplay;
+}
+.menu :hover{
+    border-top: 5px solid red;
+    background-color: RGBa(64, 200, 130, 0.15);
+    font-family: playfairdisplay;
+}
+.icone{
+    height: 50px;
+    border-radius: 50%;
+    
+}
+.pretitre {
+    color: #D6C3A1;
+    font-family: playfairdisplay;
+}
+.horaire{
+    color: #D6C3A1;
+    font-family: playfairdisplay;
+    
+}
+ul a{
+    list-style-type: none;
+}
+.ligne-doree{
+    background: linear-gradient(to right, #b8860b, #ffdf00, #b8860b);
+    border-radius: 2px;
+}
+.reserver{
+    list-style: none;
+    color: black;
+    text-decoration: none;
+    border-radius: 30px;
+    background-color: white;
+    padding: 10px 10px;
+    margin-right: 20px;
+}
+.heure{
+    margin-right: 40px;
+}
+.section-horaire::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    background:linear-gradient(110deg, rgb(0, 0, 0, 0) 20%, rgb(0, 0, 0, 0.85) 50%);
+    z-index: 0;
+}
+.carde{
+    background-color: #fff;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.carde-or{
+    line-height: 0;
+    border: 3px solid #D6C3A1;
+    border-radius: 10px;
+}
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%; 
+    height: 100%;
+    background: linear-gradient(to right,  rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+.btn-profitez{
+    list-style: none;
+    text-decoration: none;
+    border-radius: 30px;
+    background-color: #b8860b;
+    color: white;
+}
+
+
+
+
+
+
+.carrousel1{
+    position: relative;
+    z-index: 1;
+}
+.deuxtitre{
+    color: #D6C3A1;
+    font-family: playfairdisplay;   
+}
+.fin{
+    background-color: #B71414;
+    color: white;
+    border-top: 2px solid #B71414;
+}
+.maps{
+    border-radius: 30px;
+    background-color: white;
+    color: red;
+}
+.reseau-img img{
+    width: 40px;
+    height: 40px;
+    display: block;
+    transition: transform 0.2s;
+    border-radius: 8px;
+    
+}
+.footer-footer{
+    background-color: #A51D1D;
+    color: grey;
+    
+}
+.burger{
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+.burger span{
+    display:block;
+    width: 30px;
+    height: 4px;
+    background-color: white;
+}
+
+
+@media screen and (max-width: 991px){
+    .burger{
+        display: flex;
+    }
+    .tableau{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); 
+        padding: 20px 0;
+        list-style: none;
+        z-index: 1000;
+    }
+    .tableau.active{
+        display: flex;
+    }
+    .tableau li {
+        margin: 15px 0;
+        text-align: center;
+    }
+    .carde{
+        padding: 10px;
+    }
+    .image-container img{
+        display: block;
+    }
+    .deuxtitre h2{
+        font-size: 1,25rem;
+    }
+    
+}

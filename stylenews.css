@@ -1,0 +1,28 @@
+.veri {
+  background-color: #f57b7b;
+  border-color: #f57b7b;
+  color: rgb(0, 0, 0);
+}
+
+.veri:hover {
+  background-color: #f57b7b;
+  border-color: #f57b7b;
+  cursor: pointer;
+}
+
+.Boite {
+  width: 500px;
+  height: 450px;
+  background: white;
+  border-radius: 28px;
+  outline: 1px #ece7e2;
+  box-shadow: 0px 20px 60px 0px rgba(0, 0, 0, 0.08);
+}
+
+body {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  margin: 0;
+}
