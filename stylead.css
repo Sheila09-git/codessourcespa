@@ -4,7 +4,7 @@
 }
 body {
   font-family: playfairdisplay;
-  height: 100%;
+  min-height: 100vh;
   background: white;
 }
 .nav-link {
@@ -21,7 +21,8 @@ body {
 }
 .sidebar {
   background: rgb(160, 24, 24);
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 20px;
 }
 
 .sidebar .nav-link {
@@ -51,12 +52,22 @@ h3 {
   border-radius: 50%;
   object-fit: cover;
 }
+button {
+  background-color: #f57b7b;
+  border-color: #f57b7b;
+  color: rgb(0, 0, 0);
+}
+button:hover {
+  background-color: #f57b7b;
+  border-color: #f57b7b;
+  cursor: pointer;
+}
 main {
-  background-image: url(image/suggest.jpeg);
-  background-repeat: no-repeat;
+  background-color: black;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 20px;
 }
 .stat-card {
   border-radius: 15px;
@@ -81,4 +92,7 @@ main {
 }
 h5 {
   text-align: center;
+}
+h1 {
+  color: black;
 }

@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Whine Dinning</title>
+    <title>Wine Dinning</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styleacc.css">
 </head>
@@ -15,7 +15,7 @@
     <header>
         <nav>
             <div class="bande"></div>
-            <a href="file:///C:/Users/USER/Desktop/PA25-26/PA/site_web/PA/accuiel.html">
+            <a href="accueil.php">
                 <img src="image/logo.png" alt="logo" class="logo">
             </a>
 
@@ -30,19 +30,19 @@
                     <input type="checkbox" id="menu-toggle" class="menu-checkbox">
                     <label for="menu-toggle" class="menu-plat">Notre carte ▾</label>
                     <ul class="lacarte">
-                        <li class="plat"> <a href="">PLATS</a> </li>
+                        <li class="plat"> <a href="plat.php">PLATS</a> </li>
                         <br>
-                        <li class="menu"> <a href="">MENU</a> </li>
+                        <li class="menu"> <a href="menu.php">MENU</a> </li>
                     </ul>
                 </li>
                 <li class="occasion">
-                    <a href="">Nos occasions</a>
+                    <a href="offre.php">Nos occasions</a>
                 </li>
                 <li class="nous">
                     <a href="">Sur nous</a>
                 </li>
                 <li class="rejoindre">
-                    <a href="">Nous rejoindre</a>
+                    <a href="recrutement.php">Nous rejoindre</a>
                 </li>
 
                 <li class="dropdown">
@@ -52,7 +52,7 @@
                         <?php if (isset($_SESSION['email'])) { ?>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="profile.php">Mon profile</a>
+                                <a class="nav-link" href="compte.php">Mon profile</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="processing.php?action=logout">Deconnexion</a>
@@ -103,7 +103,7 @@
                         <li>DIMANCHE 18h30-23h30H</li>
                     </ul>
                     <br>
-                    <a href="" class="reserver btn btn-light px-5 py-2">RESERVER</a>
+                    <a href="reservation.php" class="reserver btn btn-light px-5 py-2">RESERVER</a>
                     <div class="ligne-doree w-100 my-2 mx-auto " style="height: 4px;"></div>
                     <div class="ligne-doree w-75 my-2 mx-auto " style="height: 4px;"></div>
                 </div>
@@ -124,10 +124,10 @@
                                     <div class="deuxtitre z-3 w-30 ms-5 m-5" style="right: 30%;">
                                         <h2>Profitez de notre<br>offre de famille <br>dès maintenant!</h2>
                                         <br>
-                                        <a href="" class="btn-profitez btn btn-light px-5 py-2">Profitez-en</a>
+                                        <a href="offre.php" class="btn-profitez btn btn-light px-5 py-2">Profitez-en</a>
                                     </div>
                                     <div class="image-container position-relative h-100">
-                                        <img src="image/27853949000_e00505c082_b.webp" alt="carrousel1" class="h-auto d-block" style="object-fit: cover;" style="max-width: 500px;">
+                                        <img src="image/BBQMEAT.avif" alt="carrousel1" class="h-auto d-block" style="object-fit: cover;" style="max-width: 500px;">
                                     </div>
                                 </div>
                             </div>
@@ -140,10 +140,10 @@
                                     <div class="deuxtitre z-3 w-30 ms-5 m-5" style="right: 30%;">
                                         <h2>Profitez de notre<br>offre d'anniversaire <br>dès maintenant!</h2>
                                         <br>
-                                        <a href="" class="btn-profitez btn btn-light px-5 py-2">Profitez-en</a>
+                                        <a href="offre.php" class="btn-profitez btn btn-light px-5 py-2">Profitez-en</a>
                                     </div>
                                     <div class="image-container position-relative h-100%">
-                                        <img src="image/images_2.webp" alt="carrousel2" class="gateau h-100% w-100%" style="object-fit: cover;">
+                                        <img src="image/tarte.png" alt="carrousel2" class="gateau h-100% w-100%" style="object-fit: cover;">
                                     </div>
                                 </div>
                             </div>
@@ -155,10 +155,10 @@
                                     <div class="deuxtitre z-3 w-30 ms-5 m-5" style="right: 30%;">
                                         <h2>Profitez de notre<br>offre exclusive <br>dès maintenant!</h2>
                                         <br>
-                                        <a href="" class="btn-profitez btn btn-light px-5 py-2">Profitez-en</a>
+                                        <a href="offre.php" class="btn-profitez btn btn-light px-5 py-2">Profitez-en</a>
                                     </div>
                                     <div class="image-container position-relative h-100">
-                                        <img src="image/download_9.webp" alt="carrousel3" class="tarte h-100 w-auto" style="object-fit: cover;">
+                                        <img src="image/APPLE-PIE.jpg" alt="carrousel3" class="tarte h-100 w-auto" style="object-fit: cover;">
                                     </div>
                                 </div>
                             </div>
@@ -215,6 +215,7 @@
         </div>
 
     </div>
+    <script src="theme.js"></script>
 
 </body>
 

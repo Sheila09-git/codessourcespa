@@ -40,39 +40,35 @@ $prenomAdmin = $admin ? $admin['username'] : "Admin";
                 </h4>
                 <ul class="nav flex-column px-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="client_list.php"> <img src="image/noun-client-1401473.svg" class="imagees" />Clients</a>
+                        <a class="nav-link" href="client_list.php"> Clients</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img
-                                src="image/emojione--fork-and-knife-with-plate.svg"
-                                class="imagees" />Plats/menus</a>
+                        <a class="nav-link" href="platsad.php">Plats/menus</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img
-                                src="image/noun-reservations-7984943.svg"
-                                class="imagees" />Réservations</a>
+                        <a class="nav-link" href="logs.php">Activités</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img
-                                src="image/noun-restaurant-8105794.svg"
-                                class="imagees" />Commandes</a>
+                        <a class="nav-link" href="#">Réservations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img
-                                src="image/noun-client-7615501.svg"
-                                class="imagees" />Salariés</a>
+                        <a class="nav-link" href="#">Commandes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img
-                                src="image/noun-messages-680438.svg"
-                                class="imagees" />Messages</a>
+                        <a class="nav-link" href="newsletter.php">Nesletters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Salariés</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Messages</a>
                     </li>
                 </ul>
             </nav>
-            <main class="col-md-9 col-lg-10 main content p-4">
+            <main class="col-md-9 col-lg-10 ms-sm-auto p-4">
                 <div class="row g-4 mb-4">
                     <div class="col-md-3">
-                        <div class="card stat-cardwhite">
+                        <div class="card stat-card white">
                             <div class="card-body end">
                                 <a href="#"><img src="image/Design sans titre.png" class="imagees" /></a>
                                 <h4><?php echo htmlspecialchars($prenomAdmin); ?></h4>

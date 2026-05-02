@@ -1,0 +1,172 @@
+@font-face {
+  font-family: playfairdisplay;
+  src: url(Playfair_Display/PlayfairDisplay-VariableFont_wght.ttf);
+}
+
+body {
+  background: #f5f5f5;
+  font-family: playfairdisplay;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1 rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  color: white;
+}
+
+nav {
+  width: 100%;
+  height: 60px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  position: fixed;
+}
+
+.tableau {
+  font-family: playfairdisplay;
+  color: #d6c3a1;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown:hover {
+  display: block;
+}
+
+.logo {
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 70px;
+}
+
+.lacarte {
+  display: none;
+  list-style-type: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
+  border-bottom: 3px solid transparent;
+}
+
+.menu-checkbox:checked {
+  display: none;
+}
+
+.menu-plat {
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+}
+
+.menu-checkbox:checked ~ .lacarte {
+  display: block;
+}
+
+.menu-checkbox {
+  display: none;
+}
+
+.icone-checkbox:checked {
+  display: none;
+}
+
+.lecompte {
+  display: none;
+  list-style: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  border-radius: 20px;
+  border-bottom: 3px solid transparent;
+}
+
+.incone {
+  cursor: pointer;
+  display: inline-block;
+  user-select: none;
+}
+
+.icone-checkbox:checked ~ .lecompte {
+  display: block;
+}
+
+.icone-checkbox {
+  display: none;
+}
+
+.plat :hover {
+  border-top: 5px solid red;
+  background-color: RGBa(64, 200, 130, 0.15);
+  font-family: playfairdisplay;
+}
+
+.menu :hover {
+  border-top: 5px solid red;
+  background-color: RGBa(64, 200, 130, 0.15);
+  font-family: playfairdisplay;
+}
+
+.icone {
+  height: 50px;
+  border-radius: 50%;
+}
+
+.hero {
+  background: url("image/Capture_decran_2026-02-11_162401.webp") center/cover
+    no-repeat;
+  height: 400px;
+  position: relative;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 100%;
+}
+
+.hero-text {
+  position: absolute;
+  bottom: 40px;
+  width: 100%;
+}
+
+.product-card {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.empty-card {
+  height: 250px;
+  border-radius: 15px;
+  background: #eaeaea;
+}
+
+.btn-custom {
+  background: rgb(160, 24, 24);
+  border-radius: 20px;
+  padding: 10px 25px;
+}
+.btn-custom:hover {
+  background-color: palevioletred;
+}

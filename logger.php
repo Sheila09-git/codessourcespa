@@ -1,11 +1,14 @@
 <?php
-
+date_default_timezone_set('Europe/Paris');
 function writeLog($action, $user)
 {
-
     $date = date("Y-m-d H:i:s");
 
-    $message = "[$date] $user : $action" . PHP_EOL;
+    if (empty($user)) {
+        $user = "inconnu";
+    }
 
-    file_put_contents("logs.txt", $message, FILE_APPEND);
+    $message = "$date|$user|$action" . PHP_EOL;
+
+    file_put_contents(__DIR__ . "/logs.txt", $message, FILE_APPEND);
 }
