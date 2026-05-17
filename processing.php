@@ -116,14 +116,28 @@ if (isset($_POST['connexion'])) {
     }
     if ($user && password_verify($_POST['mot_de_passe'], $user['motdepasse'])) {
         $_SESSION['id_user'] = $user['id_utilisateur'];
-        $_SESSION['email'] = $user['email'];
+        $_SESSION['id_utilisateur'] = $user['id_utilisateur'];
+        $_SESSION['email']   = $user['email'];
+        $_SESSION['role']    = $user['role'] ?? 'client'; 
+        
 
         $_SESSION['last_login_timestamp'] = time();
+        $pdo->prepare("UPDATE utilisateur SET last_activity = NOW() WHERE id_utilisateur = :id")
+            ->execute(['id' => $user['id_utilisateur']]);
+        writeLog("Connexion reussie", $_POST['email']);
 
-        header('location:accueil.php');
-        exit;
-    } else {
-        header('location:inscription.php?message=Erreur d\'identifiants');
+        // Redirection selon le rôle
+        switch ($_SESSION['role']) {
+            case 'admin':
+                header('location:connexion_admin.php?message=Accès réservé aux administrateurs');
+                break;
+            case 'salarie':
+                header('location:salarcom.php');
+                break;
+            default:
+                header('location:accueil.php');
+                break;
+        }
         exit;
     }
 }
@@ -296,19 +310,37 @@ if (isset($_GET['action']) && $_GET['action'] == 'block' && isset($_GET['id'])) 
 }
 // débloquer le compte
 
-if (isset($_GET['action']) && $_GET['action'] == 'unblock' && isset($_GET['id'])){
+if (isset($_GET['action']) && $_GET['action'] == 'unblock' && isset($_GET['id'])) {
     $id = $_GET['id'];
-try {
-    $stmt = $pdo->prepare("UPDATE utilisateur SET is_blocked = 0 WHERE id_utilisateur = :id");
+    try {
+        $stmt = $pdo->prepare("UPDATE utilisateur SET is_blocked = 0 WHERE id_utilisateur = :id");
         $stmt->execute(['id' => $id]);
-    header('location:client_list.php?message=Utilisateur débloqué ! ');
-    exit;
-} catch (Exception $e) {
-    header('location:client_list.php?message=Erreur lors du déblocage');
+        header('location:client_list.php?message=Utilisateur débloqué ! ');
         exit;
+    } catch (Exception $e) {
+        header('location:client_list.php?message=Erreur lors du déblocage');
+        exit;
+    }
 }
 
+
+if (isset($_POST['update_role'])){
+    $id = $_POST['id_utilisateur'];
+    $role = !empty($_POST['role']) ? $_POST['role'] : null;
+
+    try {
+        $stmt = $pdo->prepare("UPDATE utilisateur SET role = :role WHERE id_utilisateur = :id");
+        $stmt->execute(['role' => $role,'id' => $id]);
+        header('location:client_list.php?message=Rôle mis à jour avec succès');
+        exit;
+    } catch (Exception $e) {
+        header('location:client_list.php?message=Erreur lors de la modification');
+        exit;
+    }
 }
+
+
+
 // envoi de CV
 if (isset($_POST['postuler'])) {
 

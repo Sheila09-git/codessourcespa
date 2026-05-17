@@ -27,26 +27,32 @@ require_once 'db.php';
                     <li class="nav-item">
                         <a class="nav-link" href="client_list.php"> Clients</a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="admin_recrutement.php"> Recrutement</a>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="platsad.php">Plats/menus</a>
+                        <a class="nav-link" href="plat_admin.html">Plats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_menu.php">Menus</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logs.php">Activités</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Réservations</a>
+                        <a class="nav-link" href="admin-reservation.php">Réservations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Commandes</a>
+                        <a class="nav-link" href="admin_offre.php">Promotions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="newsletter.php">Nesletters</a>
+                        <a class="nav-link" href="newsletter.php">Newsletters</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Salariés</a>
+                        <a class="nav-link" href="salariés.php">Salariés</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Messages</a>
+                        <a class="nav-link" href="message.php">Messages</a>
                     </li>
                 </ul>
             </nav>
@@ -84,7 +90,7 @@ require_once 'db.php';
 
                                     <textarea name="message" placeholder="Message" class="form-control mb-3"></textarea>
 
-                                    <button type="submit" name="envoyer" class="btn btn-primary veri w-100">
+                                    <button type="submit" name="envoyer" class="btn btn-primary veri w-100" onclick="return confirm('Êtes-vous sûr de vouloir envoyer une newsletter à tous les clients ?')">
                                         Envoyer à tous les clients
                                     </button>
 

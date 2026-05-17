@@ -136,7 +136,7 @@ backdrop-filter: blur(15px);
 .icone-checkbox:checked ~ .lecompte {
     visibility: visible;
     opacity: 1;
-    top: 100%;
+    top: 100%; /* Slides down to its final position */
     transform: translateX(-50%) translateY(10px); 
 }
 
@@ -294,7 +294,7 @@ backdrop-filter: blur(15px);
     height: 400px; 
 }
 
-
+/* MODIFICATIONS START HERE */
 .image-container {
     height: 400px; 
     width: 100%;
@@ -320,7 +320,7 @@ backdrop-filter: blur(15px);
     z-index: 2;
     pointer-events: none;
 }
-
+/* MODIFICATIONS END HERE */
 
 .btn-profitez {
     list-style: none;
@@ -423,23 +423,4 @@ backdrop-filter: blur(15px);
         font-size: 0.8rem;  
         padding: 0 15px;
     }
-}
-/* Dark Mode Styles */
-body.dark-mode {
-    background-color: #121212 !important;
-    color: #f0f0f0 !important;
-}
-
-body.dark-mode .profile-card, 
-body.dark-mode .content-area, 
-body.dark-mode .sidebar {
-    background-color: #1e1e1e !important;
-    color: #f0f0f0 !important;
-    border-color: #333333 !important;
-}
-
-body.dark-mode .sidebar label, 
-body.dark-mode .sidebar-back-link,
-body.dark-mode .text-muted {
-    color: #bbbbbb !important;
 }

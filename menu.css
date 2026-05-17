@@ -1,0 +1,491 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+
+.menu-text h2, 
+.menu-text p, 
+.menu-text li {
+    font-family: 'Playfair Display', serif;
+}
+
+.menu-text h2 {
+    color: #3A2E26;
+    font-size: 1.7rem; 
+    margin-bottom: 10px;
+}
+
+.menu-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-text li {
+    font-size: 0.9rem; 
+    margin-bottom: 8px;
+    color: #4A3C32;
+}
+
+
+.menu-text .price {
+    font-family: 'Inter', sans-serif;
+    color: #3A2E26; 
+    font-size: 1.3rem; 
+    font-weight: 500; 
+    
+    margin-top: auto;   
+    align-self: flex-end; 
+}
+
+
+.menu-text {
+    flex: 1;                
+    display: flex;
+    flex-direction: column; 
+    min-height: 200px; 
+}
+
+.menu-square {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 30px; 
+    background-color: white;
+    max-width: 900px; 
+    width: 95%;      
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+}
+
+.menu-square img {
+    width: 350px; 
+    height: 250px; 
+    object-fit: cover;
+    border-radius: 8px;   
+    display: block;
+    flex-shrink: 0;      
+    filter: drop-shadow(0px 8px 20px rgba(0, 0, 0, 0.15));
+}
+
+/* --- 4. HEADER --- */
+.offre-image {
+    background-image: url('Image/Steakhouse.webp');
+    height: 300px; 
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.offre-image h1 {
+    font-family: 'Playfair Display', serif;
+    color: white;
+    font-size: 3.5rem; 
+    text-align: center;
+    line-height: 1.1;    
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+body {
+    background-color: #faecd9;
+}
+
+.my-5 {
+    margin-top: 2.5rem !important;
+}
+
+.btn-plats {
+    display: inline-block;
+    background-color: #f0bb6d; 
+    color: #3A2E26;           
+    font-family: 'Playfair Display', serif;
+    
+    
+    font-size: 0.9rem;        
+    padding: 10px 30px;       
+    
+    text-decoration: none;    
+    border-radius: 50px;      
+    transition: all 0.3s ease;
+    text-align: center;
+    
+   
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.btn-plats:hover {
+    background-color: #ffb445;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.button-container {
+    display: flex;
+    justify-content: center; 
+    margin: 40px 0;         
+}
+
+
+/* footer */
+.fin{
+    background-color: #B71414;
+    color: white;
+    border-top: 2px solid #B71414;
+}
+.maps{
+    border-radius: 30px;
+    background-color: white;
+    color: red;
+}
+.reseau-img img{
+    width: 40px;
+    height: 40px;
+    display: block;
+    transition: transform 0.2s;
+    border-radius: 8px;
+    
+}
+.footer-footer{
+    background-color: #A51D1D;
+    color: grey;
+    
+}
+
+
+@media screen and (max-width: 991px){
+    .burger{
+        display: flex;
+    }
+    .tableau{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9); 
+        padding: 20px 0;
+        list-style: none;
+        z-index: 1000;
+    }
+    .tableau.active{
+        display: flex;
+    }
+    .tableau li {
+        margin: 15px 0;
+        text-align: center;
+    }
+    .carde{
+        padding: 10px;
+    }
+    .image-container img{
+        display: block;
+    }
+    .deuxtitre h2{
+        font-size: 1,25rem;
+    }
+    
+}
+
+
+/* Nav Bar */
+nav {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1); 
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tableau {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px; 
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    color: #3A2E26;
+}
+
+.dropdown {
+    position: relative; 
+}
+
+.menu-plat, .occasion a, .nous a, .rejoindre a {
+    text-decoration: none;
+    color: #3A2E26;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+
+.lacarte, .lecompte {
+    display: none;
+    list-style: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    min-width: 160px;
+    margin-top: 10px; 
+}
+
+
+.menu-checkbox:checked ~ .lacarte,
+.icone-checkbox:checked ~ .lecompte {
+    display: block;
+}
+
+
+.lacarte li, .lecompte li {
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.lacarte li a, .lecompte li a {
+    text-decoration: none;
+    color: #3A2E26;
+    font-family: 'Inter', sans-serif; 
+    font-size: 0.9rem;
+}
+
+.lacarte li:hover, .lecompte li:hover {
+    background-color: #faecd9; 
+}
+
+
+.logo {
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 40px;
+}
+
+.icone {
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.menu-checkbox, .icone-checkbox {
+    display: none;
+}
+
+.burger, .bande, .menu-checkbox, .icone-checkbox {
+    display: none !important;
+}
+
+
+.lacarte, .lecompte {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    
+    position: absolute;
+    top: 80%; 
+    left: 50%;
+    transform: translateX(-50%) translateY(-10px); 
+    
+   
+    background: rgba(255, 255, 255, 0.2); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    
+    padding: 15px;
+    border-radius: 15px;
+    min-width: 180px;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    z-index: -1; 
+    border: 2px solid rgba(255, 255, 255, 0.7); 
+background: rgba(255, 255, 255, 0.4);      
+backdrop-filter: blur(15px);                
+}
+
+
+.menu-checkbox:checked ~ .lacarte,
+.icone-checkbox:checked ~ .lecompte {
+    visibility: visible;
+    opacity: 1;
+    top: 100%; 
+    transform: translateX(-50%) translateY(10px); 
+}
+
+
+.lacarte li, .lecompte li {
+    padding: 10px;
+    list-style: none;
+    text-align: center;
+}
+
+.lacarte li a, .lecompte li a {
+    font-family: 'Inter', sans-serif;
+    color: #3A2E26;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: none;
+    transition: 0.2s;
+    font-weight: 700; 
+    color: #2D241E;
+}
+
+.lacarte li:hover {
+    background: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+}
+
+
+body.dark-mode{
+    background-color: #2D241E;
+}
+
+body.dark-mode nav {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border-bottom: 1px solid #333 !important;
+}
+
+body.dark-mode .tableau a, 
+body.dark-mode .menu-plat {
+    color: #ffffff !important;
+}
+
+
+body.dark-mode .lacarte, 
+body.dark-mode .lecompte {
+    background: rgba(30, 30, 30, 0.9) !important;
+    border: 2px solid #444 !important;
+}
+
+body.dark-mode .lacarte li a, 
+body.dark-mode .lecompte li a {
+    color: #ffffff !important;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #6c757d;
+    font-size: 0.95rem;
+    margin-top: -5px;
+}
+
+.menu-items li {
+    margin-bottom: 5px;
+}
+@media screen and (max-width: 991px) {
+    
+    .burger {
+        display: flex;
+        z-index: 1100;
+        position: relative;
+    }
+
+    .tableau {
+        display: none;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.95); 
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        padding: 0;
+    }
+
+    .tableau.active {
+        display: flex;
+    }
+
+    .tableau li {
+        margin: 20px 0;
+    }
+
+    
+    .pretitre h1 {
+        font-size: 1.8rem;
+    }
+
+    .section-horaire::before {
+        width: 100%; 
+        background: rgba(0, 0, 0, 0.7);
+    }
+
+    .horaire {
+        width: 90% !important;
+        right: 5% !important;
+        top: 10% !important;
+        text-align: center !important;
+    }
+
+    
+    .carde {
+        padding: 20px 10px;
+    }
+
+    .carde-or {
+        height: auto; 
+        border: 2px solid #D6C3A1;
+    }
+
+    .carousel-item .bg-white {
+        flex-direction: column !important; 
+        height: auto !important;
+    }
+
+    .image-container {
+        width: 100% !important;
+        height: 250px !important; 
+        flex: none;
+    }
+
+    .image-container img {
+        display: block !important; 
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .image-container::before {
+        display: none; 
+    }
+
+    .deuxtitre {
+        width: 100% !important;
+        padding: 30px 20px !important;
+        margin: 0 !important;
+        text-align: center;
+    }
+
+    .deuxtitre h2 {
+        font-size: 1.3rem !important;
+        margin-bottom: 15px;
+    }
+
+   
+    .fin {
+        flex-direction: column;
+        text-align: center;
+    }
+}

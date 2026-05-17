@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plats- Administration</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="plat.css" />
+  </head>
+  <body class="bg-light" onload="chargerPlats()">
+    <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+                <h4 class="text-center py-4 text-black">
+                    <a class="nav-link active" href="admin.php">
+                        <img src="image/subway--admin.svg" class="image" />Admin
+                    </a>
+                </h4>
+                <ul class="nav flex-column px-3">
+                    <li class="nav-item">
+                        <a class="nav-link" href="client_list.php"> Clients</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="admin_recrutement.php"> Recrutement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="plat_admin.html">Plats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_menu.php">Menus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logs.php">Activités</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin-reservation.php">Réservations</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_offre.php">Promotions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="newsletter.php">Newsletters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="salariés.php">Salariés</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="message.php">Messages</a>
+                    </li>
+                </ul>
+            </nav>
+
+        <main class="col-md-9 col-lg-10 ms-sm-auto p-4">
+          <header
+            class="d-flex justify-content-between align-items-center mb-5"
+          >
+            <div>
+              <h1 class="display-title mb-0">Plats</h1>
+              <p class="text-muted small-subtitle">Gestion de la carte</p>
+            </div>
+            <button
+              class="btn btn-coral px-4 py-2"
+              onclick="window.location.href = 'ajouterplat.php'"
+            >
+              + Créer un plat
+            </button>
+          </header>
+
+          <div class="row g-3 align-items-center mb-4">
+            <div class="col-md-4">
+              <div class="search-wrapper">
+                <input
+                  type="text"
+                  id="searchBar"
+                  class="form-control pill-input"
+                  placeholder="🔍 Rechercher un plat.."
+                  onkeyup="filtrerNom()"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-5 d-flex gap-2">
+              <div class="dropdown">
+                <button
+                  class="btn btn-outline-filter dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Catégorie
+                </button>
+                <ul
+                  class="dropdown-menu shadow-sm border-0"
+                  id="category-dropdown-list"
+                >
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filtrerCategorie('all')"
+                      >Tous les produits</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                </ul>
+              </div>
+              <div class="dropdown">
+                <button
+                  class="btn btn-outline-filter dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                >
+                  Disponibilité
+                </button>
+                <ul class="dropdown-menu shadow-sm border-0">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filtrerDisponibilite('all')"
+                      >Tous</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filtrerDisponibilite(1)"
+                      >Disponible</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filtrerDisponibilite(0)"
+                      >Indisponible</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="col-md-3 text-end border-start">
+              <p class="mb-0 text-muted small">
+                Total: <span id="count-total" class="fw-bold">0</span>
+              </p>
+              <p class="mb-0 text-muted small">
+                Disponible: <span id="count-disp" class="fw-bold">0</span>
+              </p>
+            </div>
+          </div>
+
+          <main id="container-plats" class="row g-4"></main>
+        </main>
+      </div>
+    </div>
+    <script src="plat_admin.js"></script>
+  </body>
+  <script>
+        const burger = document.getElementById('burger-menu');
+        const menu = document.querySelector('.tableau');
+
+        burger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            burger.classList.toggle('open');
+        });
+    </script>
+</html>

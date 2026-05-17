@@ -1,0 +1,45 @@
+
+.row-deleted td {
+    text-decoration: line-through;
+}
+@media (max-width: 768px) {
+
+    .table thead {
+        display: none !important;
+    }
+
+    .table, .table tbody, .table tr, .table td {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .table tr {
+        margin-bottom: 20px !important;
+        border: 2px solid #a01818 !important; 
+        border-radius: 12px !important;
+        overflow: hidden;
+        background: #fff;
+    }
+
+    .table td {
+        text-align: right !important;
+        padding: 12px 15px !important;
+        border: none !important;
+        border-bottom: 1px solid #eee !important;
+        position: relative;
+    }
+
+    .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        font-weight: bold;
+        color: #a01818;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+    }
+    .table td:last-child {
+        text-align: center !important;
+        background: #f9f9f9;
+    }
+}

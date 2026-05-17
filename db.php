@@ -1,6 +1,6 @@
 <?php
 
-$host = "localhost"; 
+$host = "localhost";
 $dbname = "monsitepa";
 $user = "users";
 $pass = "AZERT";

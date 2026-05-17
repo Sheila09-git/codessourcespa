@@ -15,7 +15,7 @@
     <header>
         <nav>
             <div class="bande"></div>
-            <a href="accueil.php">
+            <a href="#" id="bonus">
                 <img src="image/logo.png" alt="logo" class="logo">
             </a>
 
@@ -39,7 +39,7 @@
                     <a href="offre.php">Nos occasions</a>
                 </li>
                 <li class="nous">
-                    <a href="">Sur nous</a>
+                    <a href="surnous.php">Sur nous</a>
                 </li>
                 <li class="rejoindre">
                     <a href="recrutement.php">Nous rejoindre</a>
@@ -163,6 +163,8 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        
                     </div>
 
 
@@ -215,8 +217,18 @@
         </div>
 
     </div>
-    <script src="theme.js"></script>
-
+<script src="theme.js"></script>
 </body>
 
+
+<script>
+        const burger = document.getElementById('burger-menu');
+        const menu = document.querySelector('.tableau');
+
+        burger.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            burger.classList.toggle('open');
+        });
+    </script>
+    
 </html>

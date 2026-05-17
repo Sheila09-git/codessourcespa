@@ -51,6 +51,8 @@ h3 {
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid #a01818;
+  object-fit: cover;
 }
 button {
   background-color: #f57b7b;
@@ -95,4 +97,94 @@ h5 {
 }
 h1 {
   color: black;
+}
+/* tel */
+@media (max-width: 767.98px) {
+  
+  .sidebar {
+    min-height: auto;
+    padding-bottom: 10px;
+  }
+
+  
+  .sidebar .nav {
+    flex-direction: row !important;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 10px;
+  }
+
+  .sidebar .nav-item {
+    margin-right: 10px;
+  }
+
+  .nav-link {
+    margin-bottom: 0;
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  .stat-card {
+    margin-bottom: 10px;
+  }
+
+.d-flex.align-items-center {
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 767.98px) {
+    
+    
+    .page-salaries .table thead {
+        display: none !important; 
+    }
+
+    .page-salaries .table tbody, 
+    .page-salaries .table tr, 
+    .page-salaries .table td {
+        display: block !important;
+        width: 100% !important;
+    }
+
+    .page-salaries .table tr {
+        margin-bottom: 15px !important;
+        border: 1px solid #eee !important;
+        background: #fff;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .page-salaries .table td {
+        text-align: right !important;
+        padding-left: 50% !important;
+        position: relative;
+        border: none !important;
+        border-bottom: 1px solid #f1f1f1 !important;
+    }
+
+   
+    .page-salaries .table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 10px;
+        width: 45%;
+        font-weight: bold;
+        text-align: left;
+        color: #a01818;
+    }
+
+
+    .page-salaries .table td:last-child {
+        text-align: center !important;
+        padding-left: 10px !important;
+        border-bottom: none !important;
+        background: #fafafa;
+        margin-top: 5px;
+    }
 }

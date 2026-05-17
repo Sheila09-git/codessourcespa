@@ -1,0 +1,12 @@
+const nodemailer = require("nodemailer");
+// Configuration Gmail
+const transporter = nodemailer.creatorTransport({
+     service: "gmail",
+     auth:{
+       user: "luu.alexandre.wong@gmail.com';
+       pass: 'qupd xnem gluk wcxc';
+        }
+});
+
+function sleep(ms){
+return new Pro

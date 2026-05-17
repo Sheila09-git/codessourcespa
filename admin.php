@@ -2,7 +2,10 @@
 session_start();
 require_once 'db.php';
 
-
+if (isset($_SESSION['id_user'])) {
+    $pdo->prepare("UPDATE utilisateur SET last_activity = NOW() WHERE id_utilisateur = :id")
+        ->execute(['id' => $_SESSION['id_user']]);
+}
 if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     header('location:connexion_admin.php?message=Accès réservé aux administrateurs');
     exit;
@@ -15,6 +18,12 @@ $admin = $query->fetch();
 
 
 $prenomAdmin = $admin ? $admin['username'] : "Admin";
+$usersQuery = $pdo->query("SELECT COUNT(*) AS total_users FROM utilisateur");
+$totalUsers = $usersQuery->fetch()['total_users'];
+$reservationQuery = $pdo->query("SELECT COUNT(*) AS total_reservation FROM reservation");
+$totalreservation = $reservationQuery->fetch()['total_reservation'];
+$commandeQuery = $pdo->query("SELECT COUNT(*) AS total_commande FROM commande");
+$totalcommande = $commandeQuery->fetch()['total_commande'];
 ?>
 
 <!doctype html>
@@ -32,7 +41,7 @@ $prenomAdmin = $admin ? $admin['username'] : "Admin";
 <body>
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-3 col-lg-2 d-md-block sidebar">
+           <nav class="col-md-3 col-lg-2 d-md-block sidebar">
                 <h4 class="text-center py-4 text-black">
                     <a class="nav-link active" href="admin.php">
                         <img src="image/subway--admin.svg" class="image" />Admin
@@ -42,82 +51,75 @@ $prenomAdmin = $admin ? $admin['username'] : "Admin";
                     <li class="nav-item">
                         <a class="nav-link" href="client_list.php"> Clients</a>
                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" href="admin_recrutement.php"> Recrutement</a>
+                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="platsad.php">Plats/menus</a>
+                        <a class="nav-link" href="plat_admin.html">Plats</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin_menu.php">Menus</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logs.php">Activités</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Réservations</a>
+                        <a class="nav-link" href="admin-reservation.php">Réservations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Commandes</a>
+                        <a class="nav-link" href="admin_offre.php">Promotions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="newsletter.php">Nesletters</a>
+                        <a class="nav-link" href="newsletter.php">Newsletters</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Salariés</a>
+                        <a class="nav-link" href="salariés.php">Salariés</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Messages</a>
+                        <a class="nav-link" href="message.php">Messages</a>
                     </li>
                 </ul>
             </nav>
             <main class="col-md-9 col-lg-10 ms-sm-auto p-4">
-                <div class="row g-4 mb-4">
-                    <div class="col-md-3">
-                        <div class="card stat-card white">
-                            <div class="card-body end">
-                                <a href="#"><img src="image/Design sans titre.png" class="imagees" /></a>
-                                <h4><?php echo htmlspecialchars($prenomAdmin); ?></h4>
-                            </div>
-                        </div>
+                <div class="col-md-6 d-flex mt-4 pe-4">
+                    <div class="d-flex align-items-center">
+                        <form action="update_pdp.php" method="POST" enctype="multipart/form-data" class="me-3">
+                            <label for="pdp_input" style="cursor: pointer;">
+                                <img src="<?= $_SESSION['pdp'] ?? 'image/Design sans titre.png' ?>" 
+                                    class="imagees" 
+                                    title="Cliquez pour changer de photo" 
+                                    style="border: 2px solid #a01818;">
+                            </label>
+                            <input type="file" name="photo" id="pdp_input" accept="image/*" onchange="this.form.submit()" style="display: none;">
+                        </form>
+                        
+                        <h4 class="mb-0"><?php echo htmlspecialchars($prenomAdmin); ?></h4>
                     </div>
                 </div>
                 <div class="row g-4 mb-4">
                     <div class="col-md-3">
                         <div class="card stat-card">
                             <div class="card-body">
-                                <h4>Reservations</h4>
+                                <h4><?= $totalreservation ?></h4>
+                                <p>Reservations</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card stat-card">
                             <div class="card-body">
-                                <h4>Commandes</h4>
+                                <h4><?= $totalcommande ?></h4>
+                                <p>Commandes</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card stat-card">
                             <div class="card-body">
-                                <h4>Revenus</h4>
+                                <h4><?= $totalUsers ?></h4>
+                                <p>Utilisateurs</p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card stat-card">
-                            <div class="card-body">
-                                <h4>Nouveaux clients</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-header">Activité récente</div>
-                    <div class="card-body">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Nom</th>
-                                    <th>Type</th>
-                                    <th>Date</th>
-                                </tr>
-                            </thead>
-                        </table>
                     </div>
                 </div>
             </main>

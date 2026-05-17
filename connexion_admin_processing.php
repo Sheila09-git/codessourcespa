@@ -11,25 +11,40 @@ if (isset($_POST['connexion-admin'])) {
         exit;
     }
 
-    // On cherche l'utilisateur par mail
+
     $stmt = $pdo->prepare("SELECT * FROM utilisateur WHERE email = :email");
     $stmt->execute(['email' => $email]);
     $user = $stmt->fetch();
 
-    // Vérification : existence, mot de passe et surtout le RÔLE admin
-    if ($user && password_verify($mdp, $user['motdepasse'])) {
 
+    if ($user) {
+    if (isset($user['is_delete']) && $user['is_delete'] == 1) {
+            header('location:account_delete.php');
+            exit;
+    }
+    if (isset($user['is_blocked']) && $user['is_blocked'] == 1) {
+        header('location:account_delete.php');
+        exit;
+    }
+}
+
+    if ($user && password_verify($mdp, $user['motdepasse'])) {
+        
         if ($user['role'] === 'admin') {
             $_SESSION['id_user'] = $user['id_utilisateur'];
+            $_SESSION['id_utilisateur'] = $user['id_utilisateur']; 
             $_SESSION['email'] = $user['email'];
             $_SESSION['role'] = 'admin';
-
-            header('location:admin.php'); // Redirection vers le panel admin
+            $_SESSION['photo_profil'] = $user['photo_profil'];
+            $_SESSION['pdp'] = $user['pdp'] ? 'uploads/' . $user['pdp'] : null;
+            
+            header('location:admin.php');
             exit;
         } else {
             header('location:connexion_admin.php?message=Accès refusé : vous n\'êtes pas administrateur');
             exit;
         }
+
     } else {
         header('location:connexion_admin.php?message=Identifiants incorrects');
         exit;

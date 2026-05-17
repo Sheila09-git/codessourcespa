@@ -33,22 +33,31 @@ if(!$user) {
                 </h4>
                 <ul class="nav flex-column px-3">
                     <li class="nav-item">
-                        <a class="nav-link" href="client_list.php"> <img src="image/noun-client-1401473.svg" class="imagees" />Clients</a>
+                        <a class="nav-link" href="client_list.php"> Clients</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="image/emojione--fork-and-knife-with-plate.svg" class="imagees" />Plats/menus</a>
+                        <a class="nav-link" href="platsad.php">Plats</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="image/noun-reservations-7984943.svg" class="imagees" />Réservations</a>
+                        <a class="nav-link" href="">Menus</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="image/noun-restaurant-8105794.svg" class="imagees" />Commandes</a>
+                        <a class="nav-link" href="logs.php">Activités</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="image/noun-client-7615501.svg" class="imagees" />Salariés</a>
+                        <a class="nav-link" href="#">Réservations</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><img src="image/noun-messages-680438.svg" class="imagees" />Messages</a>
+                        <a class="nav-link" href="#">Commandes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="newsletter.php">Newsletters</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="salariés.php">Salariés</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="message.php">Messages</a>
                     </li>
                 </ul>
             </nav>
@@ -65,9 +74,12 @@ if(!$user) {
                                 <div class="mb-4">
                                     <label for="role" class="form-label fw-bold">Sélection du grade :</label>
                                     <select name="role" id="role" class="form-select form-select-lg">
-                                        <option value="" <?= (empty($user['role'])) ? 'selected' : '' ?>>Client</option>
-                                        <option value="admin" <?= ($user['role'] == 'admin') ? 'selected' : '' ?>>Administrateur</option>
-                                    </select>
+                                  <option value="client" <?= ($user['role'] == 'client' || empty($user['role'])) ? 'selected' : '' ?>>Client</option>
+                                  
+                                  <option value="salarié" <?= ($user['role'] == 'salarié' || $user['role'] == 'salarie') ? 'selected' : '' ?>>Salarié</option>
+                                  
+                                  <option value="admin" <?= ($user['role'] == 'admin') ? 'selected' : '' ?>>Administrateur</option>
+                              </select>
                                     <div class="form-text mt-2 text-muted">
                                         Le rôle "Administrateur" donne accès à toutes les pages de gestion (Clients, Réservations, etc.).
                                     </div>

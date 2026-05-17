@@ -1,7 +1,10 @@
 <?php
 session_start();
 require_once 'db.php';
-
+if (isset($_SESSION['id_user'])) {
+    $pdo->prepare("UPDATE utilisateur SET last_activity = NOW() WHERE id_utilisateur = :id")
+        ->execute(['id' => $_SESSION['id_user']]);
+}
 if (!isset($_SESSION['id_user'])) {
     header('location:connexion.php');
     exit;

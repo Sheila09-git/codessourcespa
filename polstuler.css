@@ -1,0 +1,23 @@
+.form-container {
+            background: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 40px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .btn-submit {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 30px;
+            border: none;
+            transition: 0.3s;
+        }
+        .btn-submit:hover {
+            background-color: #c4a47c; 
+            color: white;
+        }
+        .pdf-info {
+            font-size: 0.85rem;
+            color: #6c757d;
+        }
